@@ -106,7 +106,7 @@ async function deleteTask(req, res) {
     const {id} = req.params;
     try {
         await Task.destroy({where: { id } });
-        return res.SendStatus(204);
+        return res.sendStatus(204);
     } catch (error) {
         logger.error(error.message);
         res.status(500).json({
